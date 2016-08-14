@@ -1,0 +1,26 @@
+---
+- hosts: all
+  remote_user: vagrant
+  become: yes
+  become_user: root
+  tasks:
+    - name: install all Caravel Dependencies needed with apt
+      apt: name={{item}} state=present
+      with_items:
+        - build-essential
+        - libssl-dev
+        - libffi-dev
+        - python-dev
+        - python-pip
+    - name: install Caravel with pip
+      pip: name=caravel state=present
+    - name: move the caravel_config file to the PYTHONPATH
+      command: cp /vagrant/caravel_config.py /usr/lib/python2.7 
+    - name: Begin the Caravel server
+      shell: caravel runserver &
+
+
+
+      
+
+
