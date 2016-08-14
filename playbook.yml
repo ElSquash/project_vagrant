@@ -19,7 +19,7 @@
         - openssl-devel
     - name: install Caravel with pip
       pip: name=caravel state=present
-    - name: move the caravel_config file to the PYTHONPATH
+    - name: copy the caravel_config file to the PYTHONPATH
       command: cp /vagrant/caravel_config.py /usr/lib/python2.7/site-packages 
     - name: Begin the Caravel server
       shell: caravel runserver &
