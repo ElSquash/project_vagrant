@@ -4,18 +4,23 @@
   become: yes
   become_user: root
   tasks:
-    - name: install all Caravel Dependencies needed with apt
-      apt: name={{item}} state=present
+    - name: Make sure python-setuptools is up to date
+      yum: name=python-setuptools state=latest
+    - name: install all Caravel Dependencies needed with yum
+      yum: name={{item}} state=installed
       with_items:
-        - build-essential
-        - libssl-dev
-        - libffi-dev
-        - python-dev
+        - epel-release
+        - gcc
+        - gcc-c++
+        - libffi-devel
+        - python-devel
         - python-pip
+        - python-wheel
+        - openssl-devel
     - name: install Caravel with pip
       pip: name=caravel state=present
     - name: move the caravel_config file to the PYTHONPATH
-      command: cp /vagrant/caravel_config.py /usr/lib/python2.7 
+      command: cp /vagrant/caravel_config.py /usr/lib/python2.7/site-packages 
     - name: Begin the Caravel server
       shell: caravel runserver &
 
