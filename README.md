@@ -16,7 +16,7 @@ Outlined here are the bare necessities you will need in order to get your vagran
 
 Since one of the main purposes of this repository is to help understand virtualization by using Vagrant, we will of course need Vagrant installed on our machine! This is very easy to do. Please download and install the latest version of Vagrant by visiting their downloads page [here](https://www.vagrantup.com/downloads.html).
 
-On this page you can get the latest install for MacOS, Windows, CentOS, and more depending on what you need. Once you have done that, please move to the next step...
+On this page you can get the latest install for MacOS, Windows, CentOS, and more depending on what you need. Once you have done that, please move to the next step!
 
 ![VirtualBox pic](https://raw.githubusercontent.com/elsquash/vagrant-caravel-playground/master/pics/Virtual_box_pic.png)
 
