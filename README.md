@@ -2,6 +2,7 @@
 
 Hello there, and glad you have made it! The main purpose for this repository is to help anyone curious about virtualization and provisioning to dive right in, get their feet wet, and learn some cool things. You will be using Vagrant, Ansible, and the open-source project by AirBnb called Caravel, in order to run a virtual machine, automatically provision it, and use Caravel to play with some interesting data! Sound good? Let's get started...
 
+
 ## Prerequisities
 
 Outlined here are the bare necessities you will need in order to get your vagrant box running and provisioned. There are just 2 things that your host machine must have installed in order to follow on...
@@ -32,8 +33,13 @@ Once you are in the root directory, simply run the command:
 ```
 vagrant up
 ```
+You should see vagrant searching to see if you have the [geerlingguy/centos7](https://atlas.hashicorp.com/hashicorp/boxes/precise64) vagrant base box on your machine. This is because of the setting included in the Vagrantfile which has been included with this repo: 
 
-You should see vagrant searching to see if you have the *geerlingguy/centos7* vagrant base box on your machine. This is because of the settings included in the Vagrantfile which has been included with this repo, sitting in the root directory. Visit Vagrant's [documentation on Vagrantfiles](https://www.vagrantup.com/docs/vagrantfile/) if you want to learn more about Vagrant files and what you can possibly set through them.
+```
+config.vm.box = "geerlingguy/centos7"
+```
+
+This base box was chosen because it is friendly to VirtualBox. Visit Vagrant's [documentation on Vagrantfiles](https://www.vagrantup.com/docs/vagrantfile/) if you want to learn more about Vagrant files and what you can possibly set through them.
 
 If you do not have the *geerlingguy/centos7* vagrant base box, Vagrant will grab it for you, and boot up the machine! This could take a few minutes if Vagrant has to go and retrieve the base box. That's okay though! You can go [discover vagrant boxes](https://atlas.hashicorp.com/boxes/search?utf8=%E2%9C%93&sort=&provider=&q=) during this time to see what the opensource community has to offer! 
 
@@ -62,7 +68,14 @@ If you have gotten to this section, then Ansible's playbook completed! Open your
 localhost:5678
 ```
 
-You should see Caravel running, and asking you to log in! The way the Vagrantfile included in the repo has been set up, the guest's port 8088 is forwarded to your host machine's port 5678. To log into the test_user account please provide Caravel with these credentials:
+You should see Caravel running, and asking you to log in! The way the Vagrantfile included in the repo has been set up, the guest's port 8088 is forwarded to your host machine's port 5678. 
+
+```
+config.vm.network "forwarded_port", guest: 80, host: 4567
+config.vm.network "forwarded_port", guest: 8088, host: 5678
+```
+
+To log into the test_user account please provide Caravel with these credentials:
 
 ```
 username: test_user
@@ -71,9 +84,17 @@ password: password
 
 Once logged in, you should be able to see a pre-loaded database of [CO2 emissions per capita](https://ourworldindata.org/co2-and-other-greenhouse-gas-emissions/) of many different countries from 1950 to 2013. You are welcome to explore Caravel now as you please and manipulate data to your heart's content. Visit [Caravel's README](https://github.com/airbnb/caravel/blob/master/README.md) to watch a quick tutorial, and learn how to use Caravel if you have never used it before.
 
+## Teardown
+
+After you have had your fun, don't forget to shut down your brand new, provisioned vagrant box running Caravel!
+
+```
+vagrant halt
+```
+
 ## Summary
 
-I hope you have learned quite a bit! All the documentation and links (above and below) will help you out majorly in understanding more about what went on in this project. Thanks!
+I hope you have learned quite a bit about virtualization and provisioning using Vagrant, Ansible, and Caravel! All the documentation and links (above and below) will help you out majorly in understanding more about what went on in this project. If you run into problems, or have questions about something that went on here, please feel free to raise an issue. Thanks!
 
 
 ## Authors
@@ -90,3 +111,4 @@ This project is open and free for anyone to use. Please site this repo as a sour
 * Ansible documentation can be found here! http://docs.ansible.com/ansible/index.html
 * VirtualBox documentation can he found here! https://www.virtualbox.org/wiki/Documentation
 * Caravel documentation can be found here! https://github.com/airbnb/caravel/blob/master/README.md
+* Info about the data used in Caravel can he found here! https://ourworldindata.org/co2-and-other-greenhouse-gas-emissions/ 
