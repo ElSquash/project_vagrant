@@ -2,8 +2,6 @@
 
 Hello there, and glad you have made it! The main purpose for this repository is to help anyone curious about virtualization and provisioning to dive right in, get their feet wet, and learn some cool things. You will be using Vagrant, Ansible, and the open-source project by AirBnb called Caravel, in order to run a virtual machine, automatically provision it, and use Caravel to play with some interesting data! Sound good? Let's get started...
 
-![Vagrant pic](https://raw.githubusercontent.com/elsquash/vagrant-caravel-playground/master/pics/Vagrant_pic.jpg)
-
 
 ## Prerequisities
 
