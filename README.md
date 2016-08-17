@@ -2,16 +2,24 @@
 
 Hello there, and glad you have made it! The main purpose for this repository is to help anyone curious about virtualization and provisioning to dive right in, get their feet wet, and learn some cool things. You will be using Vagrant, Ansible, and the open-source project by AirBnb called Caravel, in order to run a virtual machine, automatically provision it, and use Caravel to play with some interesting data! Sound good? Let's get started...
 
+![Vagrant pic](https://raw.githubusercontent.com/elsquash/vagrant-caravel-playground/master/pics/Vagrant_pic.jpg)
+
 
 ## Prerequisities
 
 Outlined here are the bare necessities you will need in order to get your vagrant box running and provisioned. There are just 2 things that your host machine must have installed in order to follow on...
+
+![Vagrant pic2](https://raw.githubusercontent.com/elsquash/vagrant-caravel-playground/master/pics/Vagrant_pic2.jpg)
+
 
 ### 1.) Vagrant
 
 Since one of the main purposes of this repository is to help understand virtualization by using Vagrant, we will of course need Vagrant installed on our machine! This is very easy to do. Please download and install the latest version of Vagrant by visiting their downloads page [here](https://www.vagrantup.com/downloads.html).
 
 On this page you can get the latest install for MacOS, Windows, CentOS, and more depending on what you need. Once you have done that, please move to the next step...
+
+![VirtualBox pic](https://raw.githubusercontent.com/elsquash/vagrant-caravel-playground/master/pics/Virtual_box_pic.png)
+
 
 ### 2.) VirtualBox
 
@@ -47,6 +55,9 @@ Once the box has been retrieved and booted, you should be seeing a bit of output
 
 ## Provisioning
 
+![Vagrant pic](https://raw.githubusercontent.com/elsquash/vagrant-caravel-playground/master/pics/ansible-logo.png)
+
+
 Here is where Ansible comes into the picture. Once the vagrant box is up and running, Ansible will actually begin to install on the guest machine (this is another setting in the Vagrantfile). See Vagrant's own documentation on [integrating with Ansible](https://www.vagrantup.com/docs/provisioning/ansible_local.html) for more details. Once Ansible is installed locally on the guest machine, it will run the playbook.yml file and install all the necessary dependencies needed to successfully get Caravel up and running. 
 
 If you want to know more about how Ansible works and how to create playbooks for provisioning, please check out [Ansible's documention](http://docs.ansible.com/ansible/index.html) for more info. There is a great 30 minute [introductory video](https://www.ansible.com/quick-start-video) they provide as well if you need a break from reading :)
@@ -61,6 +72,9 @@ default                    : ok=6    changed=4    unreachable=0    failed=0
 Caravel should be running on the guest machine in the background now!
 
 ## Using Caravel
+
+![Vagrant pic](https://raw.githubusercontent.com/elsquash/vagrant-caravel-playground/master/pics/caravel-screenshots.jpg)
+
 
 If you have gotten to this section, then Ansible's playbook completed! Open your favorite browser, and go to:
 
@@ -111,4 +125,10 @@ This project is open and free for anyone to use. Please site this repo as a sour
 * Ansible documentation can be found here! http://docs.ansible.com/ansible/index.html
 * VirtualBox documentation can he found here! https://www.virtualbox.org/wiki/Documentation
 * Caravel documentation can be found here! https://github.com/airbnb/caravel/blob/master/README.md
-* Info about the data used in Caravel can he found here! https://ourworldindata.org/co2-and-other-greenhouse-gas-emissions/ 
+* The C0o2 data used in Caravel can he found here! http://bit.ly/2bcMrcY
+
+* Pic 1: http://bit.ly/2bzbkS5
+* Pic 2: http://bit.ly/2bx5n5Q
+* Pic 3: http://bit.ly/2bwyxBp
+* Pic 4: http://bit.ly/2bpV2rl
+* Pic 5: http://bit.ly/2bcKRrw
