@@ -38,7 +38,7 @@ Once you are in the root directory, simply run the command:
 ```
 vagrant up
 ```
-You should see vagrant searching to see if you have the [geerlingguy/centos7](https://atlas.hashicorp.com/hashicorp/boxes/precise64) vagrant base box on your machine. This is because of the setting included in the Vagrantfile which has been included with this repo: 
+You should see vagrant searching to see if you have the [geerlingguy/centos7](https://atlas.hashicorp.com/geerlingguy/boxes/centos7) vagrant base box on your machine. This is because of the setting included in the Vagrantfile which has been included with this repo: 
 
 ```
 config.vm.box = "geerlingguy/centos7"
