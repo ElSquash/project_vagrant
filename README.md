@@ -57,7 +57,7 @@ Once the box has been retrieved and booted, you should be seeing a bit of output
 
 Here is where Ansible comes into the picture. Once the vagrant box is up and running, Ansible will actually begin to install on the guest machine (this is another setting in the Vagrantfile). See Vagrant's own documentation on [integrating with Ansible](https://www.vagrantup.com/docs/provisioning/ansible_local.html) for more details. Once Ansible is installed locally on the guest machine, it will run the playbook.yml file and install all the necessary dependencies needed to successfully get Caravel up and running. 
 
-If you want to know more about how Ansible works and how to create playbooks for provisioning, please check out [Ansible's documention](http://docs.ansible.com/ansible/index.html) for more info. There is a great 30 minute [introductory video](https://www.ansible.com/quick-start-video) they provide as well if you need a break from reading :)
+If you want to know more about how Ansible works and how to create playbooks using [YAML](http://docs.ansible.com/ansible/YAMLSyntax.html) for provisioning, please check out [Ansible's documention](http://docs.ansible.com/ansible/index.html) for more info. There is a great 30 minute [introductory video](https://www.ansible.com/quick-start-video) they provide as well if you need a break from reading :)
 
 Still here? Okay, this process will take a couple minutes. Installing Caravel on the guest machine can take a while, so sit back, maybe read through [how playbooks are structured](http://docs.ansible.com/ansible/playbooks.html), and wait for it to complete. How do you know Ansible completed the playbook? You should be given back control of your command-line interface, and see the output below:
 
